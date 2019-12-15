@@ -1,0 +1,40 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 9,
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "worker": true,
+    "node": true
+  },
+  "rules": {
+    "react/state-in-constructor": 0,
+    "react/jsx-filename-extension": 0,
+    "react/prefer-stateless-function": 0,
+    "react/jsx-closing-bracket-location": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "react/no-access-state-in-setstate": 0,
+    "no-unused-vars": 1,
+    "react/prop-types": 0,
+    "no-use-before-define": [
+      "error",
+      {
+        "functions": false
+      }
+    ],
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
+    "react/react-in-jsx-scope": 0,
+    "comma-dangle": ["error", {
+      "functions": "never"
+    }]
+  }
+}

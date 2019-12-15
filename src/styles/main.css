@@ -1,0 +1,18 @@
+.list-group-item {
+  padding: .375rem .75rem;
+}
+.jumbotron {
+  padding: 1rem 2rem !important;
+}
+.card-body {
+  padding: 0;
+}
+.card-header {
+  padding: 0;
+}
+.btn-secondary.small-toggle {
+  background-color: #6c757d82;
+}
+.sidebar {
+  display: inline-block;
+}
