@@ -10,13 +10,13 @@ import routes from './routes';
 
 //
 dotenv.config({
-  silent: true,
+  silent: true
 });
 
 // Express app setup
-const app = express(),
-  DIST_DIR = path.join(__dirname, "dist");
-//HTML_FILE = path.join(DIST_DIR, "index.html");
+const app = express();
+const DIST_DIR = path.join(__dirname, 'dist');
+// HTML_FILE = path.join(DIST_DIR, "index.html");
 
 
 // logger
@@ -40,7 +40,7 @@ app.use(express.static(DIST_DIR));
 // use routes
 app.use('/', routes);
 
-app.use( (err, req, res, next) => {
+app.use((err, req, res, next) => {
   console.error(err);
   console.error(err.stack);
   res.status(err.status || 500).send(err.message || 'Internal server error.');

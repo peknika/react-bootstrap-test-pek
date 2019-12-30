@@ -16,12 +16,13 @@
     "node": true
   },
   "rules": {
+    "no-class-assign": 1,
     "react/state-in-constructor": 0,
     "react/jsx-filename-extension": 0,
     "react/prefer-stateless-function": 0,
     "react/jsx-closing-bracket-location": 0,
     "jsx-a11y/anchor-is-valid": 0,
-    "react/no-access-state-in-setstate": 0,
+    "react/no-access-state-in-setstate": 1,
     "no-unused-vars": 1,
     "react/prop-types": 0,
     "no-use-before-define": [

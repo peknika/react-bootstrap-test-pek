@@ -37,8 +37,8 @@ class TaskList extends React.Component {
 
     return (
       <ListGroup>
-        {tasks.map(({ id, content }) => (
-          <Task key={id} text={content} id={id} />
+        {tasks.map(({ id, content, state }) => (
+          <Task key={id} text={content} id={id} taskState={state} />
         ))}
       </ListGroup>
     );
@@ -50,7 +50,7 @@ TaskList.propTypes = {
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       content: PropTypes.string.isRequired,
-      state: PropTypes.oneOf(['active', 'finished']),
+      state: PropTypes.oneOf(['active', 'done']),
       user_id: PropTypes.number.isRequired
     }).isRequired
   ).isRequired

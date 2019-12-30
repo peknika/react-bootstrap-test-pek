@@ -1,12 +1,15 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { faAngleDoubleRight, faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import NotesChoise from './NotesChoise';
 import NotebookChoice from './NotebookChoice';
 
 export default class Sidebar extends React.Component {
   state = {
     isOpened: true
-  };
+  }
 
   toggleVisibility = (e) => {
     e.preventDefault();
@@ -20,12 +23,19 @@ export default class Sidebar extends React.Component {
     const { isOpened } = this.state;
     if (!isOpened) {
       return (
-        <Button variant="secondary" className="small-toggle" inline onClick={this.toggleVisibility}>{'>>'}</Button>
+        <span className="sidebar" style={{ maxWidth: 40 }}>
+          <Button class="close" variant="dark" onClick={this.toggleVisibility}>
+            <FontAwesomeIcon icon={faAngleDoubleRight} />
+          </Button>
+        </span>
       );
     }
     return (
       <div className="sidebar">
-        <Button variant="secondary" block onClick={this.toggleVisibility}>{'<<'}</Button>
+        <Button class="close" variant="dark" block onClick={this.toggleVisibility}>
+          <FontAwesomeIcon icon={faAngleDoubleLeft} />
+        </Button>
+        <NotesChoise />
         <NotebookChoice />
       </div>
     );

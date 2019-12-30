@@ -16,5 +16,7 @@ const apiHost = `${host}/api`;
 
 export default {
   tasksUrl: () => [apiHost, 'tasks'].join('/'), // get tasks list
-  taskUrl: (id) => [apiHost, 'tasks', id].join('/')
+  taskUrl: (type, id) => [apiHost, 'tasks', type, id].join('/'),
+  notesUrl: () => [apiHost, 'notes'].join('/'),
+  noteUrl: (type, id) => [apiHost, 'notes', type, id].join('/')
 };

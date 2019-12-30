@@ -1,8 +1,60 @@
-.list-group-item {
-  padding: .375rem .75rem;
+:root {
+  font: 400 16px 'Varela', sans-serif;
 }
-.jumbotron {
-  padding: 1rem 2rem !important;
+body {
+  margin: 0;
+}
+.navbar {
+  background: #1995AD !important;
+}
+.editor-container {
+  flex-grow: 1;
+}
+.quill-form {
+  background: whitesmoke;
+  border-radius: 0 0 4px 4px;
+}
+.ql-container {
+  background: white;
+  height: 70% !important;
+}
+#todo-wrap, #note-wrap {
+  display: flex;
+justify-content: stretch
+}
+#todos-wrap {
+border-color: #A1D6E2;
+}
+#outer-container {
+  display: flex;
+  flex-direction: column;
+}
+#inline-icon{
+  margin-right: 5px;
+}
+.btn-group, .btn-group-vertical {
+  display: flex;
+}
+.list-group-item {
+  cursor: pointer;
+  padding: .375rem .75rem;
+  display: flex;
+  flex-grow: 1;
+}
+.active-header:hover {
+  border-color: rgba(237, 230, 4, 0.6) !important;
+  background-color: rgba(237, 230, 4, 0.6) !important;;
+}
+active-header:focus {
+  outline: none !important;
+}
+.active-header {
+  border-color: rgba(237, 230, 4, 0.3) !important;
+  background-color: rgba(237, 230, 4, 0.3) !important;;
+}
+.btn-dark, btn-dark:focus, btn-dark:hover {
+  border-color: #A1D6E2 !important;
+  background-color: #A1D6E2 !important;
 }
 .card-body {
   padding: 0;
@@ -10,9 +62,38 @@
 .card-header {
   padding: 0;
 }
-.btn-secondary.small-toggle {
-  background-color: #6c757d82;
+.btn-outline-secondary {
+  color: #a0a9b1;
+  border-color: #a0a9b1;
 }
-.sidebar {
-  display: inline-block;
+.form-control:focus {
+  border-color: #A1D6E2;
+}
+.flex-row {
+padding: .375rem .75rem;
+  background-color: #A1D6E2;
+  border-color: #A1D6E2;
+}
+.btn-link, .btn-link:hover {
+  color: white;
+}
+.navbar .container {
+  justify-content: flex-start;
+}
+@media only screen and (min-width: 730px) {
+  #outer-container {
+    flex-direction: row;
+  }
+  .editor-container {
+    flex-grow: 1;
+  }
+  .quill-form {
+    flex-basis: 700px;
+    background: whitesmoke;
+  }
+  .sidebar {
+    flex-basis: 250px;
+    min-height: 100vh;
+    background: #A1D6E2;
+  }
 }

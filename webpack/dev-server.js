@@ -11,7 +11,7 @@ export default (app) => {
     // defines the level of messages to log
     logLevel: 'warn',
     // public path to bind the middleware to
-    publicPath: webpackConfig.output.publicPath,
+    publicPath: webpackConfig.output.publicPath
 
   }));
   // allow using Webpack hot reloading

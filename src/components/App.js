@@ -1,31 +1,28 @@
 import React from 'react';
-import { Row, Col, Jumbotron } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import '../styles/main.css';
-import Header from './Header';
-import Sidebar from './Sidebar';
+import authService from '../auth/service';
+import MySidebar from './Sidebar';
 import TaskList from './TaskList';
 import NewTaskForm from './NewTaskForm';
+import EditorComponent from './EditorForm';
+import Header from './Header';
 
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <>
         <Header />
-        <Row>
-          <Col sm={9}>
-            <Sidebar />
-            (wider)
-          </Col>
-          <Col>
-            <Jumbotron>
-              <NewTaskForm />
-              <TaskList />
-            </Jumbotron>
-          </Col>
-        </Row>
-      </div>
+        <div id="outer-container">
+          <MySidebar />
+          <EditorComponent />
+          <div id="todos-wrap">
+            <NewTaskForm />
+            <TaskList />
+          </div>
+        </div>
+      </>
     );
   }
 }

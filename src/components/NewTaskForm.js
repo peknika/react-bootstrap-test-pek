@@ -9,19 +9,19 @@ import { Field, reduxForm, SubmissionError } from 'redux-form';
 import { addTask as addNewTask } from '../redux/actions/dispatchTaskActions';
 
 const ReduxFormControl = ({
-  input, type, required
+  input, type, required, placeholder
 }) => (
   <FormControl
     block
     type={type}
     required={required}
+    placeholder={placeholder}
     value={input.value}
     onChange={input.onChange} />
 );
 
 class NewTaskForm extends React.Component {
   handleSubmit = async (values) => {
-    console.log('VALUES', values);
     const { reset, addTask } = this.props;
     try {
       await addTask({ task: values });
@@ -41,8 +41,9 @@ class NewTaskForm extends React.Component {
           name="text"
           required
           type="text"
+          placeholder="I'm going to..."
           component={ReduxFormControl} />
-        <Button variant="secondary" size="sm" block type="submit" disabled={submitting || pristine}>Add</Button>
+        <Button variant="info" size="sm" block type="submit" disabled={submitting || pristine}>Add</Button>
         {error && <div className="ml-3">{error}</div>}
       </Form>
     );

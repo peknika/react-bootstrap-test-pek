@@ -7,7 +7,9 @@ import {
   removeTaskRequest,
   removeTaskFailure,
   removeTaskSuccess,
-  addTaskSuccess
+  addTaskSuccess,
+  toggleTaskStateFailure,
+  toggleTaskStateSuccess
 } from './actions';
 import routes from '../../../paths';
 
@@ -24,18 +26,28 @@ export const getAllTasks = () => async (dispatch) => {
 
 
 export const addTask = ({ task }) => async (dispatch) => {
-  const response = await axios.post(routes.taskUrl(task.id), { task: { ...task, userId: 0 } });
+  const response = await axios.post(routes.taskUrl('add'), { task: { ...task, userId: 0 } });
   dispatch(addTaskSuccess({ task: response.data[0] }));
 };
 
 export const removeTask = ({ id }) => async (dispatch) => {
   dispatch(removeTaskRequest());
   try {
-    const url = routes.taskUrl(id);
+    const url = routes.taskUrl('delete', id);
     await axios.delete(url);
     dispatch(removeTaskSuccess({ id }));
   } catch (e) {
     dispatch(removeTaskFailure());
+    throw e;
+  }
+};
+
+export const toggleTaskStatus = ({ id, state }) => async (dispatch) => {
+  try {
+    const response = await axios.post(routes.taskUrl('update', id), { state });
+    dispatch(toggleTaskStateSuccess({ task: response.data[0] }));
+  } catch (e) {
+    dispatch(toggleTaskStateFailure());
     throw e;
   }
 };
