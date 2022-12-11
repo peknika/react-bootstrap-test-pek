@@ -30,7 +30,7 @@
     "class-names": "^1.0.0",
     "cors": "^2.8.5",
     "draft-js": "^0.11.3",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "helmet": "^3.21.2",
     "immutability-helper": "^3.0.1",
     "lodash": "^4.17.15",
